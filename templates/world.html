@@ -1,0 +1,132 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Total Cases</h4>
+                        <p class="category">{{stats['Coronavirus Cases']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Total Recoveries</h4>
+                        <p class="category">{{stats['Recovered']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Total Deaths</h4>
+                        <p class="category">{{stats['Deaths']}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Affected vs Unaffected Popolation in the world</h4>
+                <p class="category"></p>
+            </div>
+            <img src="{{url_for('static',filename='images/totalPop_vsCovidCases.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Total Recovered and Total Deaths in the Total Case</h4>
+            </div>
+            <img src="{{url_for('static',filename='images/WorldStatspie.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Active Cases and how many of them are serious</h4>
+                <p class="category">Active Case = {{stats['activecases']}}</p>
+                <p class="category">Serious Cases = {{stats['seriouscases']}}</p>
+            </div>
+            <img src="{{url_for('static',filename='images/world_active_serious.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Total Cases In  Every Continent</h4>
+            </div>
+            <img src="{{url_for('static',filename='images/continent_total_cases.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Top 20  countries Most Affected By Covid</h4>
+            </div>
+            <img src="{{url_for('static',filename='images/TotalCaseCountry.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Countries With Most Deaths Per Million Population</h4>
+            </div>
+            <img src="{{url_for('static',filename='images/most_death_per_million_.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Scatter Plot Diagaram</h4>
+            </div>
+            <img src="{{url_for('static',filename='images/scatterplot.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

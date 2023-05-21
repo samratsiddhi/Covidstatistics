@@ -1,0 +1,109 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Total Cases</h4>
+                        <p class="category">{{stats['TotalCases']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Total Recoveries</h4>
+                        <p class="category">{{stats['TotalRecovered']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Total Deaths</h4>
+                        <p class="category">{{stats['TotalDeaths']}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div class="row" style="margin-left: 10px;">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Cases Today</h4>
+                        <p class="category">{{stats['NewCases']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Recoveries Today</h4>
+                        <p class="category">{{stats['NewRecovered']}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card equal-size-card">
+                    <div class="header">
+                        <h4 class="title">Deaths Today</h4>
+                        <p class="category">{{stats['NewDeaths']}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Affected vs Unaffeccted people in Nepal</h4>
+                <p class="category">Unaffected = {{stats['Population']-stats['TotalCases']}}</p>
+                <p class="category">Affecteds = {{stats['TotalCases']}}</p>
+            </div>
+            <img src="{{url_for('static',filename='images/nepal_pop_vs_cases.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Recovered vs Deaths</h4>
+                <p class="category">Total Recovered = {{stats['TotalRecovered']}}</p>
+                <p class="category">Total  Death = {{stats['TotalCases']}}</p>
+            </div>
+            <img src="{{url_for('static',filename='images/nepal_recovered_vs_death.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card ">
+            <div class="header">
+                <h4 class="title">Number of  serious cases among the active cases</h4>
+                <p class="category">Active Case = {{stats['ActiveCases']}}</p>
+                <p class="category">Serious Cases = {{stats['SeriousCases']}}</p>
+            </div>
+            <img src="{{url_for('static',filename='images/active_serious.png')}}" alt="">
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
